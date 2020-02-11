@@ -116,19 +116,19 @@ fun Date.humanizeDiff(): String { //date: Date = Date()
 //    (MINUTE).easyPrint()
 //    date.time.easyPrint()
 //    currentTime.easyPrint()
-   val differenceTime = (currentTime - date.time).absoluteValue
+    val differenceTime = (currentTime - date.time).absoluteValue
 //    var idea:Float = differenceTime / SECOND.toFloat()
 //    idea.easyPrint()
-    (differenceTime/ SECOND.toFloat()/ 3600).roundToInt().easyPrint()
+    (differenceTime / SECOND.toFloat() / 3600).roundToInt().easyPrint()
     return when (differenceTime) {
-        in 0..1* SECOND -> "только что"
-        in 1* SECOND..45* SECOND -> "несколько секунд назад"
-        in 46* SECOND..75* SECOND -> "минуту назад"
-        in 76* SECOND..45* MINUTE-> "${TimeUnits.MINUTE.plural( (differenceTime/ SECOND.toFloat()/ 60).roundToInt())} назад"//2700* SECOND
-        in 2701* SECOND ..4500* SECOND  -> "час назад"
-        in 4501* SECOND ..79200* SECOND  -> "${TimeUnits.HOUR.plural((differenceTime/ SECOND.toFloat()/ 3600).roundToInt())} назад"
-        in 79200* SECOND ..93600* SECOND  -> "день назад"
-        in 93601* SECOND ..31104000* SECOND  -> "${TimeUnits.DAY.plural((differenceTime/ SECOND.toFloat()/ 3600/24).roundToInt())} назад"
+        in 0..1 * SECOND -> "только что"
+        in 1 * SECOND..45 * SECOND -> "несколько секунд назад"
+        in 46 * SECOND..75 * SECOND -> "минуту назад"
+        in 76 * SECOND..45 * MINUTE -> "${TimeUnits.MINUTE.plural((differenceTime / SECOND.toFloat() / 60).roundToInt())} назад"//2700* SECOND
+        in 2701 * SECOND..4500 * SECOND -> "час назад"
+        in 4501 * SECOND..79200 * SECOND -> "${TimeUnits.HOUR.plural((differenceTime / SECOND.toFloat() / 3600).roundToInt())} назад"
+        in 79200 * SECOND..93600 * SECOND -> "день назад"
+        in 93601 * SECOND..31104000 * SECOND -> "${TimeUnits.DAY.plural((differenceTime / SECOND.toFloat() / 3600 / 24).roundToInt())} назад"
         else -> "более года назад"
 
     }

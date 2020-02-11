@@ -42,7 +42,7 @@ data class User(
 //            }
 
 
-                var (firstName, lastName)= Utils.parseFullName(fullName)
+                var (firstName, lastName)= parseFullName(fullName)
                 return User(id = "$lastId", firstName = firstName, lastName = lastName)
         //    }
 

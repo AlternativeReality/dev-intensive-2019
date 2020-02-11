@@ -1,26 +1,35 @@
 package ru.skillbranch.devintensive.utils
 
-object Utils {
-    fun parseFullName(fullName: String?): Pair<String?, String?> {
-        val parts: List<String>? = fullName?.split(" ")
-        var firstName = parts?.getOrNull(0) ?: "default"
-        var lastName = parts?.getOrNull(1) ?: "default"
-//        return Pair(firstName, lastName)
-        return firstName to lastName
-    }
+import org.jetbrains.annotations.NotNull
+import ru.skillbranch.devintensive.extensions.easyPrint
 
+object Utils {
+    fun parseFullName(fullName: String?): Pair<String?, String?> {//Pair<String?, String?>
+        var parts: MutableList<String>? = fullName?.split(" ")?.toMutableList()
+        //parts?.remove(" ")
+        // parts?.easyPrint()
+        var firstName = parts?.getOrNull(0)
+        var lastName = parts?.getOrNull(1)
+        if (firstName.isNullOrBlank()) {
+            firstName = null
+         
+        }
+        if (lastName.isNullOrBlank()) lastName = null
+        return (firstName to lastName)
+    }
 
 
     fun toInitials(firstName: String?, lastName: String?): String? {
-        if (firstName.isNullOrBlank() && lastName.isNullOrBlank()){
+        if (firstName.isNullOrBlank() && lastName.isNullOrBlank()) {
             return null
         }
-        var A= firstName?.getOrNull(0)?.toUpperCase()
-        var B= lastName?.getOrNull(0)?.toUpperCase()?: ""
+        var A = firstName?.getOrNull(0)?.toUpperCase() ?: ""
+        var B = lastName?.getOrNull(0)?.toUpperCase() ?: ""
         return "$A$B"
 
     }
-    fun transliteration(name: String, divider:String=" "): String {
+
+    fun transliteration(name: String, divider: String = " "): String {
         val dictionary = mapOf(
             "а" to "a",
             "б" to "b",
@@ -30,7 +39,7 @@ object Utils {
             "е" to "e",
             "ё" to "e",
             "ж" to "zh",
-           // "Ж" to "Zh",
+            // "Ж" to "Zh",
             "з" to "z",
             "и" to "i",
             "й" to "i",
@@ -59,10 +68,9 @@ object Utils {
             " " to "$divider"
         )
 
-        var result= name
+        var result = name
 
-        dictionary.forEach{
-                (l, r) ->
+        dictionary.forEach { (l, r) ->
 
             result = result.replace(l, r)
             result = result.replace(l.capitalize(), r.capitalize())
