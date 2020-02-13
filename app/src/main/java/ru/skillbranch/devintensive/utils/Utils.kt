@@ -2,7 +2,7 @@ package ru.skillbranch.devintensive.utils
 
 import org.jetbrains.annotations.NotNull
 import ru.skillbranch.devintensive.extensions.easyPrint
-
+import android.database.sqlite.*
 object Utils {
     fun parseFullName(fullName: String?): Pair<String?, String?> {//Pair<String?, String?>
         var parts: MutableList<String>? = fullName?.split(" ")?.toMutableList()
@@ -12,7 +12,7 @@ object Utils {
         var lastName = parts?.getOrNull(1)
         if (firstName.isNullOrBlank()) {
             firstName = null
-         
+
         }
         if (lastName.isNullOrBlank()) lastName = null
         return (firstName to lastName)
