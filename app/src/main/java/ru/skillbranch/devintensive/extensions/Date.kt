@@ -19,6 +19,12 @@ fun Date.format(pattern: String = "HH:mm:ss dd.MM.yy"): String {
     //return dateFormat.format(this)
 }
 
+fun Date.getData(pattern: String = "yy.MM.dd"): String {
+//    val dateFormat =
+    return SimpleDateFormat(pattern, Locale("ru")).format(this)
+    //return dateFormat.format(this)
+}
+
 fun Date.add(value: Int, units: TimeUnits = TimeUnits.SECOND): Date {
     var time = this.time
 
