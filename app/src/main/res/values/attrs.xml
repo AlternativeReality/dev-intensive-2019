@@ -4,6 +4,12 @@
         <attr name="aspectRatio" format="float" />
     </declare-styleable>
 
+    <declare-styleable name="CircleImageView">
+        <attr name="circle" format="float" />
+        <attr name="cv_borderColor" format="color"> </attr>
+        <attr name="cv_borderWidth" format="dimension" />
+    </declare-styleable>
+
     <attr name="colorAccentedSurface" format="reference" />
     <attr name="colorDivider" format="reference" />
     <attr name="colorIcon" format="reference" />

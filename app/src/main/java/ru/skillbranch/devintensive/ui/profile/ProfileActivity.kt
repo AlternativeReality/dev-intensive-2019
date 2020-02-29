@@ -38,6 +38,7 @@ class ProfileActivity : AppCompatActivity() {
     lateinit var viewFields: Map<String, TextView>
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
        initViews(savedInstanceState)
@@ -58,7 +59,7 @@ class ProfileActivity : AppCompatActivity() {
     }
 
     private fun updateTheme(mode: Int) {
-        Log.d("M_ProfileActivity","uodateTheme")
+        Log.d("M_ProfileActivity","updateTheme")
         delegate.localNightMode = mode
     }
 
@@ -139,6 +140,7 @@ class ProfileActivity : AppCompatActivity() {
             lastName = et_last_name.text.toString(),
             about = et_about.text.toString(),
             repository = et_repository.text.toString()
+
 
         ).apply {
             viewModel.saveProfileData(this)
