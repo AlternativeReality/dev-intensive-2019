@@ -38,18 +38,18 @@
                 android:src="@drawable/ic_switch_day_night" />
 
 
-            <ru.skillbranch.devintensive.ui.custom.CircleImageView
-                android:id="@+id/iv_avatar"
-                android:layout_width="@dimen/avatar_round_size"
-                android:layout_height="@dimen/avatar_round_size"
-                android:layout_centerHorizontal="true"
-                android:src="@drawable/default_avatar"/>
-<!--            <ImageView-->
+<!--            <ru.skillbranch.devintensive.ui.custom.CircleImageView-->
 <!--                android:id="@+id/iv_avatar"-->
 <!--                android:layout_width="@dimen/avatar_round_size"-->
 <!--                android:layout_height="@dimen/avatar_round_size"-->
 <!--                android:layout_centerHorizontal="true"-->
-<!--                android:src="@drawable/default_avatar" />-->
+<!--                android:src="@drawable/default_avatar"/>-->
+            <ImageView
+                android:id="@+id/iv_avatar"
+                android:layout_width="@dimen/avatar_round_size"
+                android:layout_height="@dimen/avatar_round_size"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/default_avatar" />
 
             <ImageButton
                 android:id="@+id/btn_edit"
