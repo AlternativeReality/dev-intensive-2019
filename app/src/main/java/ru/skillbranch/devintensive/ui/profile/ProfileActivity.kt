@@ -83,7 +83,7 @@ class ProfileActivity : AppCompatActivity() {
             showCurrentMode(isEditMode)
         }
 
-        button_switch_theme.setOnClickListener {
+        btn_switch_theme.setOnClickListener {
             viewModel.switchTheme()
         }
     }
