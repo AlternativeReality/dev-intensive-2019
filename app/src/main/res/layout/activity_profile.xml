@@ -28,7 +28,7 @@
 
 
             <ImageButton
-                android:id="@+id/button_switch_theme"
+                android:id="@+id/btn_switch_theme"
                 android:layout_width="@dimen/btn_round_size_40"
                 android:layout_height="@dimen/btn_round_size_40"
                 android:layout_marginTop="36dp"
@@ -252,6 +252,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
+
         <ImageView
             android:layout_width="@dimen/btn_round_size_40"
             android:layout_height="@dimen/btn_round_size_40"
@@ -259,6 +260,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="0dp"
+            android:id="@+id/wr_repository"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/spacing_normal_16"
             android:layout_weight="1">
